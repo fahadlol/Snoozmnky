@@ -53,16 +53,22 @@ This will start Vite dev server on `http://localhost:5173`
 
 ## 📦 Deployment
 
-### Manual Build
+### Building for Production
 
-1. **Copy files to deployment:**
-   - All HTML, JS, and CSS files from root directory
-   - `.htaccess` file
-   - No need to build - it's vanilla JavaScript!
+1. **Build the project:**
+```bash
+npm run build
+```
 
-2. **Upload to cPanel:**
+2. **Copy required files from `dist/` folder:**
+   - `index.html`
+   - `config.js`
+   - `app.js`
+   - `assets/` folder (contains CSS)
+
+3. **Upload to cPanel:**
    - Extract files to `public_html` directory
-   - Ensure `.htaccess` is uploaded (for clean URLs)
+   - Ensure `config.js` is uploaded with your Supabase credentials
 
 ### Clean URLs
 The `.htaccess` file enables clean URLs:
