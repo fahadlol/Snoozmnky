@@ -6,6 +6,7 @@
     "dev": "vite",
     "start": "vite",
     "build": "vite build",
+    "postbuild": "copy config.js dist\\config.js && copy app.js dist\\app.js",
     "preview": "vite preview"
   },
   "keywords": ["pre-order", "ecommerce", "hoodies"],
