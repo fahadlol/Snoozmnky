@@ -111,6 +111,21 @@ Required Supabase tables:
 - **Secondary Color:** White
 - **Accent:** Light Blue (#60a5fa)
 
+## 🔧 Troubleshooting
+
+### Browser Console Errors
+
+If you see `ERR_BLOCKED_BY_CLIENT` errors for resources like:
+- `img.sedoparking.com` 
+- `arrows-curved.png`
+
+**These are harmless!** They're typically caused by:
+- Ad blockers or browser extensions blocking third-party resources
+- Domain parking pages for expired URLs
+- Browser extensions that add their own tracking
+
+These errors won't affect your application's functionality. You can safely ignore them or disable browser extensions if they're cluttering your console.
+
 ## 📝 License
 
 ISC
