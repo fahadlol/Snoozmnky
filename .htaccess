@@ -1,0 +1,11 @@
+﻿RewriteEngine On
+
+# Redirect /admin to /admin.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^admin$ admin.html [L]
+
+# Redirect /home to /index.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^home$ index.html [L]

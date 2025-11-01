@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - SnoozMnky</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="admin-page">
+    <header>
+        <div class="container">
+            <h1>🍌 SnoozMnky Admin</h1>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/admin" class="active">Admin</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div id="loginScreen">
+                <div class="login-box">
+                    <h2>Admin Login</h2>
+                    <input type="password" id="password" placeholder="Password">
+                    <button onclick="login()">Login</button>
+                    <p id="loginError"></p>
+                </div>
+            </div>
+
+            <div id="dashboard" style="display:none">
+                <div class="tabs">
+                    <button class="tab active" onclick="showTab('orders')">Orders</button>
+                    <button class="tab" onclick="showTab('products')">Products</button>
+                    <button class="tab" onclick="showTab('discount')">Discount Codes</button>
+                    <button class="tab" onclick="showTab('settings')">Settings</button>
+                </div>
+
+                <div id="ordersTab" class="tab-content active">
+                    <h2>Pre-Orders</h2>
+                    <div id="ordersList">Loading...</div>
+                </div>
+
+                <div id="productsTab" class="tab-content">
+                    <h2>Products</h2>
+                    <button onclick="document.getElementById('productForm').style.display='block'">Add Product</button>
+                    <div id="productForm" style="display:none">
+                        <input type="text" id="pName" placeholder="Name">
+                        <input type="text" id="pImage" placeholder="Image URL">
+                        <input type="number" id="pPrice" placeholder="Price">
+                        <button onclick="addProduct()">Add</button>
+                    </div>
+                    <div id="productsList">Loading...</div>
+                </div>
+
+                <div id="discountTab" class="tab-content">
+                    <h2>Discount Codes</h2>
+                    <button onclick="showDiscountForm()">Create New Code</button>
+                    <div id="discountForm" style="display:none; margin:20px 0;">
+                        <input type="text" id="dCode" placeholder="Code">
+                        <input type="number" id="dPercent" placeholder="Discount %">
+                        <input type="number" id="dMaxUses" placeholder="Max Uses">
+                        <button onclick="createDiscountCode()">Create</button>
+                        <button onclick="hideDiscountForm()">Cancel</button>
+                    </div>
+                    <div id="discountList">Loading...</div>
+                </div>
+
+                <div id="settingsTab" class="tab-content">
+                    <h2>Settings</h2>
+                    <label><input type="checkbox" id="enabled" onchange="toggleEnabled()">Enable Orders</label>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="config.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
+

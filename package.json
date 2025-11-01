@@ -1,0 +1,14 @@
+{
+  "name": "snoozmnky",
+  "version": "1.0.0",
+  "description": "SnoozMnky Hoodie Pre-Order System",
+  "scripts": {
+    "dev": "vite",
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": ["pre-order", "ecommerce", "hoodies"],
+  "author": "",
+  "license": "ISC"
+}
