@@ -7,7 +7,7 @@
     "start": "vite",
     "prebuild": "node generate-config.js",
     "build": "vite build",
-    "postbuild": "shx cp config.js dist/config.js && shx cp app.js dist/app.js",
+    "postbuild": "node copy-files.js",
     "preview": "vite preview"
   },
   "keywords": ["pre-order", "ecommerce", "hoodies"],
