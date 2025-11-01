@@ -6,16 +6,17 @@ A vanilla HTML, CSS, and JavaScript pre-order system for SnoozMnky hoodies with 
 
 ```
 SnoozMnky/
-├── index.html      # Main pre-order page
-├── admin.html      # Admin dashboard
-├── app.js          # Frontend logic
-├── admin.js        # Admin logic
-├── config.js       # Supabase configuration
-├── style.css       # All styles (navy blue theme)
-├── .htaccess       # Clean URL routing for Apache
-├── package.json    # NPM scripts for Vite
-├── vite.config.js  # Vite configuration
-└── README.md       # This file
+├── index.html         # Main pre-order page
+├── admin.html         # Admin dashboard
+├── app.js             # Frontend logic
+├── admin.js           # Admin logic
+├── config.js          # Supabase configuration (not tracked in git)
+├── config.example.js  # Configuration template
+├── style.css          # All styles (navy blue theme)
+├── .htaccess          # Clean URL routing for Apache
+├── package.json       # NPM scripts for Vite
+├── vite.config.js     # Vite configuration
+└── README.md          # This file
 ```
 
 ## 🚀 Features
@@ -72,14 +73,23 @@ The `.htaccess` file enables clean URLs:
 ## ⚙️ Configuration
 
 ### Supabase Setup
-Edit `config.js` with your Supabase credentials:
+
+1. **Create `config.js` from template:**
+```bash
+cp config.example.js config.js
+```
+
+2. **Edit `config.js` with your Supabase credentials:**
 ```javascript
 const SUPABASE_URL = 'your-project-url'
 const SUPABASE_KEY = 'your-anon-key'
+const ADMIN_PASS = 'your-secure-password'
 ```
 
+⚠️ **Important:** `config.js` is not tracked in git for security. Always use `config.example.js` as a template.
+
 ### Admin Access
-Default password: `2025911` (change in `config.js`)
+Set your admin password in `config.js` using `ADMIN_PASS`.
 
 ## 📊 Database Schema
 

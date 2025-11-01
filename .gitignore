@@ -3,6 +3,7 @@ dist/
 .next/
 snoozmnky/
 *.log
+config.js
 .DS_Store
 .vscode/
 *.zip
