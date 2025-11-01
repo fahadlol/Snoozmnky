@@ -5,11 +5,16 @@
   "scripts": {
     "dev": "vite",
     "start": "vite",
+    "prebuild": "node generate-config.js",
     "build": "vite build",
-    "postbuild": "copy config.js dist\\config.js && copy app.js dist\\app.js",
+    "postbuild": "shx cp config.js dist/config.js && shx cp app.js dist/app.js",
     "preview": "vite preview"
   },
   "keywords": ["pre-order", "ecommerce", "hoodies"],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "vite": "^7.1.12"
+  }
 }
